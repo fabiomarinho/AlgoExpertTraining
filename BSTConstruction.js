@@ -47,19 +47,6 @@ class BST {
           }
       }
       
-      _findParent(value){
-          let nodeToSearch = value < this.value ? this.left : this.right
-          if (nodeToSearch){
-              if (nodeToSearch.value==value){
-                  return this
-              }else{
-                  return nodeToSearch._findParent(value)
-              }
-          }
-          return null
-      }
-      
-      
     contains(value) {
           let node = this._find(value)
           return node ? true : false
@@ -79,10 +66,10 @@ class BST {
           let currentNode = this
           while (currentNode){
               if (value < currentNode.value){
-                  let parentNode = currentNode
+                  parentNode = currentNode
                   currentNode = currentNode.left
               }else if (value > currentNode.value){
-                  let parentNode = currentNode
+                  parentNode = currentNode
                   currentNode = currentNode.right
               }else{
                   if (currentNode.hasAllChildren){
@@ -109,7 +96,7 @@ class BST {
                   break
               }
           }
-          return this	
+          return currentNode	
       }
   }
   
