@@ -22,7 +22,7 @@ insert(node){
     if (nextNode){
         nextNode.prev = node
     }
-    //If is the first insertion
+    //If it is the first insertion
     if (!this.tail){
         this.tail = node
     }

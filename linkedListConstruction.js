@@ -16,16 +16,16 @@ class Node {
   
       
     setHead(node) {
-      this.remove(node)
-          node.next = this.head
-          if (node.next){
-              node.next.prev = node
-          }else{
-              this.tail = node
-          }
-          node.prev = null
-          this.head = node
-      }
+        this.remove(node)
+        node.next = this.head
+        if (node.next){
+            node.next.prev = node
+        }else{
+            this.tail = node
+        }
+        node.prev = null
+        this.head = node
+    }
   
     setTail(node) {
           this.remove(node)
