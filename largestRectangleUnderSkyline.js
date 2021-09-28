@@ -17,6 +17,7 @@ function largestRectangleUnderSkyline(buildings) {
     return maxArea;
   }
   
+  
   // Do not edit the line below.
   exports.largestRectangleUnderSkyline = largestRectangleUnderSkyline;
   
