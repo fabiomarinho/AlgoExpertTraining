@@ -45,3 +45,27 @@ function searchInSortedMatrix(matrix, target) {
   // Do not edit the line below.
   exports.searchInSortedMatrix = searchInSortedMatrix;
   
+
+
+
+  //Best solution below:
+
+  function searchInSortedMatrix(matrix, target) {
+    let [maxHeight,maxWidth] = [matrix.length-1,matrix[0].length-1]
+      let ix = [0,maxWidth]
+      let value = matrix[ix[0]][ix[1]]
+      while (value != target){
+          ix[1] = (value > target) ? ix[1] - 1 : ix[1]
+          ix[0] = (value < target) ? ix[0] + 1 : ix[0]
+          
+          if (ix[0] > maxHeight || ix[1] < 0) return [-1,-1]
+                  
+          value = matrix[ix[0]][ix[1]]
+          if (value == target) return [ix[0],ix[1]]
+      }
+      return [ix[0],ix[1]]
+  }
+  
+  // Do not edit the line below.
+  exports.searchInSortedMatrix = searchInSortedMatrix;
+  
